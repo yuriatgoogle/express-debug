@@ -1,2 +1,2 @@
-# express-trace
-Basic Hello World with Stackdriver Trace SDK and outbound HTTP call
+# express-debug
+Basic Hello World with random sleep for Stackdriver Debug lab

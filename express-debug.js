@@ -18,30 +18,11 @@ const app = express();
 const got = require('got');
 const http = require('http');
 
-
-
-// This incoming HTTP request should be captured by Trace
 app.get('/', (req, res) => {
     
     var sleepInt = randomInt(1,10);
 	var sleepVar = require ('sleep');
     sleepVar.sleep(sleepInt); 
-    
-    //outbound HTTP request should be traced
-    const myReq = http.request(options, (res) => {
-        console.log("http requested" + res.url);
-        console.log("STATUS: " + res.statusCode);
-        });
-
-        res.on('end', () => {
-            console.log('http requested ' + res.url);
-        });
-
-        myReq.on('error', (e) => {
-            console.log(`problem with request: ${e.message}`);
-          });
-
-    myReq.end();
     
     //return response
 	res
